@@ -1,0 +1,10 @@
+/Users/sharonmarroquin/Programacion/IntelliJIDEA/ShopLite/src/main/java/com/darwinruiz/shoplite/controllers/AdminServlet.java
+/Users/sharonmarroquin/Programacion/IntelliJIDEA/ShopLite/src/main/java/com/darwinruiz/shoplite/controllers/HomeServlet.java
+/Users/sharonmarroquin/Programacion/IntelliJIDEA/ShopLite/src/main/java/com/darwinruiz/shoplite/controllers/LoginServlet.java
+/Users/sharonmarroquin/Programacion/IntelliJIDEA/ShopLite/src/main/java/com/darwinruiz/shoplite/controllers/LogoutServlet.java
+/Users/sharonmarroquin/Programacion/IntelliJIDEA/ShopLite/src/main/java/com/darwinruiz/shoplite/filters/AdminFilter.java
+/Users/sharonmarroquin/Programacion/IntelliJIDEA/ShopLite/src/main/java/com/darwinruiz/shoplite/filters/AuthFilter.java
+/Users/sharonmarroquin/Programacion/IntelliJIDEA/ShopLite/src/main/java/com/darwinruiz/shoplite/models/Product.java
+/Users/sharonmarroquin/Programacion/IntelliJIDEA/ShopLite/src/main/java/com/darwinruiz/shoplite/models/User.java
+/Users/sharonmarroquin/Programacion/IntelliJIDEA/ShopLite/src/main/java/com/darwinruiz/shoplite/repositories/ProductRepository.java
+/Users/sharonmarroquin/Programacion/IntelliJIDEA/ShopLite/src/main/java/com/darwinruiz/shoplite/repositories/UserRepository.java
