@@ -5,12 +5,63 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed3ab4d8-ab09-4da5-8dc4-d0b875308de5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/darwinruiz/shoplite/controllers/DashboardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/darwinruiz/shoplite/controllers/ErrorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/darwinruiz/shoplite/controllers/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/darwinruiz/shoplite/database/dbconnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/darwinruiz/shoplite/repositories/IProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/darwinruiz/shoplite/repositories/IUserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/darwinruiz/shoplite/services/IProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/darwinruiz/shoplite/services/IUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/darwinruiz/shoplite/services/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/darwinruiz/shoplite/services/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/users/form.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/users/list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/darwinruiz/shoplite/controllers/AdminServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/darwinruiz/shoplite/controllers/AdminServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/darwinruiz/shoplite/controllers/HomeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/darwinruiz/shoplite/controllers/HomeServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/darwinruiz/shoplite/controllers/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/darwinruiz/shoplite/controllers/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/darwinruiz/shoplite/models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/darwinruiz/shoplite/models/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/darwinruiz/shoplite/repositories/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/darwinruiz/shoplite/repositories/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/darwinruiz/shoplite/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/darwinruiz/shoplite/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/403.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/403.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ShopLite.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/ShopLite.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ShopLite/WEB-INF/classes/com/darwinruiz/shoplite/controllers/AdminServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ShopLite/WEB-INF/classes/com/darwinruiz/shoplite/controllers/AdminServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ShopLite/WEB-INF/classes/com/darwinruiz/shoplite/controllers/HomeServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ShopLite/WEB-INF/classes/com/darwinruiz/shoplite/controllers/HomeServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ShopLite/WEB-INF/classes/com/darwinruiz/shoplite/controllers/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ShopLite/WEB-INF/classes/com/darwinruiz/shoplite/controllers/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ShopLite/WEB-INF/classes/com/darwinruiz/shoplite/models/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ShopLite/WEB-INF/classes/com/darwinruiz/shoplite/models/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ShopLite/WEB-INF/classes/com/darwinruiz/shoplite/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ShopLite/WEB-INF/classes/com/darwinruiz/shoplite/models/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ShopLite/WEB-INF/classes/com/darwinruiz/shoplite/repositories/ProductRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ShopLite/WEB-INF/classes/com/darwinruiz/shoplite/repositories/ProductRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ShopLite/WEB-INF/classes/com/darwinruiz/shoplite/repositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ShopLite/WEB-INF/classes/com/darwinruiz/shoplite/repositories/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ShopLite/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ShopLite/admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ShopLite/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ShopLite/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ShopLite/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ShopLite/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/darwinruiz/shoplite/controllers/AdminServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/darwinruiz/shoplite/controllers/AdminServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/darwinruiz/shoplite/controllers/HomeServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/darwinruiz/shoplite/controllers/HomeServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/darwinruiz/shoplite/controllers/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/darwinruiz/shoplite/controllers/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/darwinruiz/shoplite/models/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/darwinruiz/shoplite/models/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/darwinruiz/shoplite/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/darwinruiz/shoplite/models/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/darwinruiz/shoplite/repositories/ProductRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/darwinruiz/shoplite/repositories/ProductRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/darwinruiz/shoplite/repositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/darwinruiz/shoplite/repositories/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Jsp File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -35,21 +86,59 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/sharonmarroquin/Programacion/IntelliJIDEA/ShopLite-PostgreSQL&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.ShopLite [wildfly:deploy].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/sharonmarroquin/Programacion/IntelliJIDEA/ShopLite-PostgreSQL",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/views" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="ShopLite [wildfly:deploy]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="wildfly:deploy" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -67,7 +156,7 @@
       <updated>1755737578653</updated>
       <workItem from="1755737580284" duration="302000" />
       <workItem from="1755738001473" duration="2348000" />
-      <workItem from="1756087298757" duration="1056000" />
+      <workItem from="1756087298757" duration="4229000" />
     </task>
     <servers />
   </component>

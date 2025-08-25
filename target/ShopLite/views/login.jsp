@@ -19,22 +19,19 @@
     <div class="card shadow-sm">
         <div class="card-body p-4">
             <h3 class="mb-3">Iniciar sesión</h3>
-            <c:if test="${param.err=='1'}">
-                <div class="alert alert-danger">Credenciales inválidas</div>
+            <c:if test="${not empty error}">
+                <div class="alert alert-danger">${error}</div>
             </c:if>
-            <form method="post" action="${pageContext.request.contextPath}/auth/login" class="row g-3">
-                <div class="col-12">
-                    <label class="form-label">Email</label>
-                    <input class="form-control" name="email" value="admin@demo.com" required>
+            <form method="post" action="${pageContext.request.contextPath}/login" class="row g-3">
+                <div class="mb-3">
+                    <label class="form-label">Usuario</label>
+                    <input name="username" value="admin" class="form-control" required/>
                 </div>
-                <div class="col-12">
-                    <label class="form-label">Contraseña</label>
-                    <input class="form-control" type="password" name="password" value="admin123" required>
+                <div class="mb-3">
+                    <label class="form-label" value="admin123">Contraseña</label>
+                    <input name="password" type="password" class="form-control" value="admin123" required/>
                 </div>
-                <div class="col-12 d-flex gap-2">
-                    <button class="btn btn-primary">Entrar</button>
-                    <a class="btn btn-light" href="${pageContext.request.contextPath}/">Cancelar</a>
-                </div>
+                <button class="btn btn-primary w-100">Entrar</button>
             </form>
         </div>
     </div>

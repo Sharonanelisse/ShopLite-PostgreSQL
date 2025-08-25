@@ -1,62 +1,84 @@
 package com.darwinruiz.shoplite.controllers;
 
 import com.darwinruiz.shoplite.models.Product;
-import com.darwinruiz.shoplite.repositories.ProductRepository;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import com.darwinruiz.shoplite.services.IProductService;
+import com.darwinruiz.shoplite.services.ProductService;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
+import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Optional;
 
-/**
- * Requisito (POST): validar y crear un nuevo producto en memoria y redirigir a /home.
- */
-@WebServlet("/admin")
+@WebServlet(name = "AdminServlet",
+        urlPatterns = {"/app", "/app/new", "/app/edit", "/app/save", "/app/delete"})
 public class AdminServlet extends HttpServlet {
+    private final IProductService service = new ProductService();
+    private static final int PAGE_SIZE = 5;
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        try {
-            req.getRequestDispatcher("/admin.jsp").forward(req, resp);
-        } catch (Exception e) {
-            throw new IOException(e);
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String path = req.getServletPath();
+
+        if ("/app".equals(path)) {
+            int page = parse(req.getParameter("page"), 1);
+            List<Product> list = service.list(page, PAGE_SIZE);
+            req.setAttribute("products", list);
+            req.setAttribute("page", page);
+            req.setAttribute("totalPages", service.totalPages(PAGE_SIZE));
+            req.getRequestDispatcher("/views/home.jsp").forward(req, resp);
+            return;
+        }
+
+        if ("/app/new".equals(path)) {
+            req.setAttribute("product", new Product());
+            req.getRequestDispatcher("/views/admin.jsp").forward(req, resp);
+            return;
+        }
+
+        if ("/app/edit".equals(path)) {
+            int id = Integer.parseInt(req.getParameter("id"));
+            Optional<Product> p = service.getById(id);
+            if (p.isEmpty()) {
+                resp.sendError(404);
+                return;
+            }
+            req.setAttribute("product", p.get());
+            req.getRequestDispatcher("/views/admin.jsp").forward(req, resp);
         }
     }
 
-    /*Leer name y price desde el formulario.*/
-
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        String name = req.getParameter("name");
-        String priceIni = req.getParameter("price");
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+        String path = req.getServletPath();
 
-        /*Validar que el nombre no esté vacío y el precio sea mayor a 0.*/
-        if (name == null || name.trim().isEmpty()) {
-            resp.sendRedirect(req.getContextPath() + "/admin?err=1");
+        if ("/app/save".equals(path)) {
+            Integer id = req.getParameter("id") == null || req.getParameter("id").isBlank() ? null
+                    : Integer.parseInt(req.getParameter("id"));
+            String name = req.getParameter("name");
+            BigDecimal price = new BigDecimal(req.getParameter("price"));
+            Integer stock = Integer.parseInt(req.getParameter("stock"));
+
+            Product p = new Product(id, name, price, stock);
+            service.save(p);
+            resp.sendRedirect(req.getContextPath() + "/app");
             return;
         }
 
-        double price;
+        if ("/app/delete".equals(path)) {
+            int id = Integer.parseInt(req.getParameter("id"));
+            service.delete(id);
+            resp.sendRedirect(req.getContextPath() + "/app");
+        }
+    }
+
+    private int parse(String s, int def) {
         try {
-            price = Double.parseDouble(priceIni);
-            if (price <= 0) {
-                resp.sendRedirect(req.getContextPath() + "/admin?err=1");
-                return;
-            }
-        } catch (NumberFormatException e) {
-            resp.sendRedirect(req.getContextPath() + "/admin?err=1");
-            return;
+            return Integer.parseInt(s);
+        } catch (Exception e) {
+            return def;
         }
-
-        /*• Usar repo.nextId() para generar el nuevo ID y guardar el producto.
-        • Si es válido, redirigir a /home.
-        • Si no es válido, redirigir a /admin?err=1.*/
-
-        long id = ProductRepository.nextId();
-        Product p = new Product(id, name, price);
-        ProductRepository.add(p);
-
-        resp.sendRedirect(req.getContextPath() + "/home");
     }
 }

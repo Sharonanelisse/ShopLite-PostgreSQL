@@ -13,7 +13,12 @@
     <div class="container">
         <a class="navbar-brand text-primary" href="${pageContext.request.contextPath}/home">ShopLite</a>
         <div class="ms-auto d-flex gap-2">
-            <a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/admin">Nuevo producto (Admin)</a>
+            <c:if test="${sessionScope.user != null && sessionScope.user.role == 'ADMIN'}">
+                <a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/app/new">Nuevo producto</a>
+
+                <a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/app">Usuarios</a>
+
+            </c:if>
             <form method="post" action="${pageContext.request.contextPath}/auth/logout">
                 <button class="btn btn-sm btn-outline-danger">Cerrar sesión</button>
             </form>
@@ -23,6 +28,7 @@
 
 <section class="container my-5">
     <h2 class="mb-3">Productos</h2>
+    <a class="btn btn-primary" href="${pageContext.request.contextPath}/app/new">Nuevo</a>
 
     <!-- Requisito: esta lista debe venir paginada desde HomeServlet -->
     <div class="row g-3">

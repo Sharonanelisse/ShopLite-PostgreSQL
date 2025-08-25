@@ -1,17 +1,25 @@
 package com.darwinruiz.shoplite.models;
 
-public class Product {
-    private long id;
-    private String name;
-    private double price;
+import java.math.BigDecimal;
 
-    public Product(long id, String name, double price) {
+public class Product {
+    private Integer id;
+    private String name;
+    private BigDecimal price;
+    private Integer stock;
+
+    public Product(Integer id, String name, BigDecimal price, Integer stock) {
         this.id = id;
         this.name = name;
         this.price = price;
+        this.stock = stock;
     }
 
-    public long getId() {
+    public Product() {
+
+    }
+
+    public Integer getId() {
         return id;
     }
 
@@ -19,11 +27,13 @@ public class Product {
         return name;
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setId(long id) {
+    public Integer getStock() { return stock;}
+
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -31,7 +41,9 @@ public class Product {
         this.name = name;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
+
+    public void setStock(Integer stock) {this.stock = stock;}
 }

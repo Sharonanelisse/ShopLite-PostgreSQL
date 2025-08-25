@@ -21,19 +21,26 @@
     </c:if>
     <div class="card shadow-sm">
         <div class="card-body p-4">
-            <h3 class="mb-3">Nuevo producto</h3>
-            <!-- Requisito (POST /admin): crear producto válido y redirigir a /home -->
-            <form method="post" action="${pageContext.request.contextPath}/admin" class="row g-3">
-                <div class="col-12">
+
+            <h4>${product.id == null ? 'Nuevo producto' : 'Editar producto'}</h4>
+
+            <form method="post" action="${pageContext.request.contextPath}/app/save" class="row g-3">
+                <input type="hidden" name="id" value="${product.id}"/>
+                <div class="col-md-6">
                     <label class="form-label">Nombre</label>
-                    <input class="form-control" name="name" placeholder="Teclado 60%">
+                    <input name="name" value="${product.name}" class="form-control" required/>
                 </div>
-                <div class="col-12">
+                <div class="col-md-3">
                     <label class="form-label">Precio</label>
-                    <input class="form-control" name="price" placeholder="59.99">
+                    <input name="price" type="number" step="0.01" value="${product.price}" class="form-control" required/>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Stock</label>
+                    <input name="stock" type="number" value="${product.stock}" class="form-control" required/>
                 </div>
                 <div class="col-12">
                     <button class="btn btn-primary">Guardar</button>
+                    <a class="btn btn-secondary" href="${pageContext.request.contextPath}/app">Cancelar</a>
                 </div>
             </form>
         </div>
